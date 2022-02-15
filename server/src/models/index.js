@@ -1,4 +1,6 @@
-// include all of your models here using CommonJS requires
-const User = require("./User.js")
+const Creature = require("./Creature");
+const Encounter = require("./Encounter");
+const EncounterCreature = require("./EncounterCreature")
+const User = require("./User.js");
 
-module.exports = {User};
+module.exports = { User, Encounter, Creature, EncounterCreature };

@@ -35,6 +35,21 @@ class User extends uniqueFunc(Model) {
     };
   }
 
+  static get relationMappings() {
+    const Encounter = require("./Encounter");
+
+    return {
+      encounters: {
+        relation: Model.HasManyRelation,
+        modelClass: Encounter,
+        join: {
+          from: "users.id",
+          to: "encounters.userId"
+        }
+      }
+    };
+  }
+
   $formatJson(json) {
     const serializedJson = super.$formatJson(json);
 
