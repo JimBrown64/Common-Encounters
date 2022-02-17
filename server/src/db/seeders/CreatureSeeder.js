@@ -26,7 +26,7 @@ class CreatureSeeder {
       },
       {
         name: "Cultist",
-        CR: .125,
+        CR: 1/8,
         HP: 9,
         AC: 12,
         speed: 30,
