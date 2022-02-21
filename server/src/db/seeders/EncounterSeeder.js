@@ -5,11 +5,9 @@ class EncounterSeeder {
     const encounterData = [
       {
         name: "First Encounter",
-        userId: 1
       },
       {
         name: "Second Encounter",
-        userId: 1
       }
     ]
 

@@ -39,7 +39,7 @@ class Creature extends Model {
     const Encounter = require("./Encounter")
     return {
       encounterCreatures: {
-        relation: Model.HasOneRelation,
+        relation: Model.HasManyRelation,
         modelClass: EncounterCreature,
         join: {
           from: "creatures.id",
