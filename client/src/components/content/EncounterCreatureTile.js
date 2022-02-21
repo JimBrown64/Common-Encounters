@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 
-const CreatureTile = (props) => {
+const EncounterCreatureTile = (props) => {
   const creature = props.creature
-  const id = creature.id
 
   const [visible, setVisible] = useState("hide")
 
@@ -14,12 +13,12 @@ const CreatureTile = (props) => {
     }
   }
 
-  const addHandler = () => {
-    props.addEncounterCreature(id)
+  const removeHandler = () => {
+    props.removeEncounterCreature(creature.id)
   }
 
   return (
-    <div className="container">
+    <div className="encounter">
       <h3 onClick={clickHandler} >
         CR:{creature.CR}  {creature.name}
       </h3>
@@ -88,10 +87,10 @@ const CreatureTile = (props) => {
         <p className="actions">
           actions:{creature.actions}
         </p>
-        <button type="button" onClick={addHandler}>Add to Encounter</button>
+        <button type="button" onClick={removeHandler}>Remove from Encounter</button>
       </div>
     </div>
   )
 }
 
-export default CreatureTile
+export default EncounterCreatureTile

@@ -10,8 +10,8 @@ class EncounterCreature extends Model {
       type: "object",
       required: ["encounterId", "creatureId"],
       properties: {
-        encounterId: { type: "integer" },
-        creatureId: { type: "integer" }
+        encounterId: { type: ["integer", "string"] },
+        creatureId: { type: ["integer", "string"] }
       }
     }
   }

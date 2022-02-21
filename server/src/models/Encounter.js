@@ -8,7 +8,7 @@ class Encounter extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name", "userId"],
+      required: ["name"],
       properties: {
         name: { type: "string" },
         userId: { type: "integer" }
