@@ -67,12 +67,14 @@ const CreatureList = (props) => {
   }, [])
 
   return (
-    <div>
+    <div className="row">
+      <div className="column">
       <EncounterForm
         encounterArray={encounterArray}
         encounterCreatures={encounterCreatures}
       />
-      <div>
+      </div>
+      <div className= "column list">
         {creatureArray}
       </div>
     </div>

@@ -33,6 +33,7 @@ const EncounterForm = (props) => {
       }
       else {
         const body = await response.json()
+        location.href = "/encounters"
       }
     } catch (error) {
       console.error("The form broke", error)
@@ -51,11 +52,10 @@ const EncounterForm = (props) => {
     clearForm()
   }
 
-
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name: *</label>
+        <label className="formName" htmlFor='name'>Name: *</label>
         <input
           type='text'
           name='name'

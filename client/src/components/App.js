@@ -8,6 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import CreatureList from "./content/CreatureList";
+import EncounterList from "./content/EncounterList";
+import EncounterShow from "./content/EncounterShow";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -32,6 +34,8 @@ const App = (props) => {
           <h2>Hello from react</h2>
         </Route>
         <Route exact path="/creatures" component={CreatureList} />
+        <Route exact path="/encounters" component={EncounterList} />
+        <Route exact path="/encounters/:id" component={EncounterShow} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
