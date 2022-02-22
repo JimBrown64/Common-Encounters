@@ -18,24 +18,24 @@ const EncounterCreatureTile = (props) => {
   }
 
   return (
-    <div className="encounter">
+    <div className="container">
       <h3 onClick={clickHandler} >
         CR:{creature.CR}  {creature.name}
       </h3>
-      <div className={`stat-block ${visible}`}>
-        <div className="stats">
-          <p>
+      <div className={`encounterStatBlock ${visible}`}>
+        <div className="topStats">
+          <p className="gap">
             HP:{creature.HP}
           </p>
-          <p>
+          <p className="gap">
             AC:{creature.AC}
           </p>
-          <p>
+          <p className="gap">
             speed:{creature.speed}
           </p>
         </div>
-        <div className="stats">
-          <div className="stats">
+        <div className="statList">
+          <div className="statList">
             <div className="half">
               <p>
                 Str:{creature.str}
@@ -59,7 +59,7 @@ const EncounterCreatureTile = (props) => {
               </p>
             </div>
           </div>
-          <div className="stats">
+          <div className="statList">
             <div className="half">
               <p>
                 Str save:{creature.strSave}
@@ -87,7 +87,7 @@ const EncounterCreatureTile = (props) => {
         <p className="actions">
           actions:{creature.actions}
         </p>
-        <button type="button" onClick={removeHandler}>Remove from Encounter</button>
+        <button className="encounterSubmit" type="button" onClick={removeHandler}>Remove from Encounter</button>
       </div>
     </div>
   )

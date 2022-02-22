@@ -23,20 +23,20 @@ const CreatureTile = (props) => {
       <h3 onClick={clickHandler} >
         CR:{creature.CR}  {creature.name}
       </h3>
-      <div className={`stat-block ${visible}`}>
-        <div className="stats">
-          <p>
+      <div className={`statBlock ${visible}`}>
+        <div className="topStats">
+          <p className="gap">
             HP:{creature.HP}
           </p>
-          <p>
+          <p className="gap">
             AC:{creature.AC}
           </p>
-          <p>
+          <p className="gap">
             speed:{creature.speed}
           </p>
         </div>
-        <div className="stats">
-          <div className="stats">
+        <div className="statList">
+          <div className="statList">
             <div className="half">
               <p>
                 Str:{creature.str}
@@ -60,7 +60,7 @@ const CreatureTile = (props) => {
               </p>
             </div>
           </div>
-          <div className="stats">
+          <div className="statList">
             <div className="half">
               <p>
                 Str save:{creature.strSave}
@@ -88,7 +88,7 @@ const CreatureTile = (props) => {
         <p className="actions">
           actions:{creature.actions}
         </p>
-        <button type="button" onClick={addHandler}>Add to Encounter</button>
+        <button className="submit" type="button" onClick={addHandler}>Add to Encounter</button>
       </div>
     </div>
   )

@@ -4,6 +4,28 @@ import { Encounter, EncounterCreature } from "../../../models/index.js";
 
 const encounterRouter = new express.Router()
 
+encounterRouter.get("/", async (req, res) => {
+  try {
+    const encounters = await Encounter.query()
+    return res.status(200).json({ encounters: encounters })
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json({ errors: err })
+  }
+})
+
+encounterRouter.get("/:id", async (req, res) => {
+  const id = req.params.id
+  try {
+    const encounter = await Encounter.query().findById(id)
+    const encounterCreatures = await encounter.$relatedQuery("creatures")
+    const returnBody = { encounter: encounter, encounterCreatures: encounterCreatures }
+    return res.status(200).json(returnBody)
+  } catch (err) {
+    return res.status(500).json({ errors: err })
+  }
+})
+
 encounterRouter.post("/", async (req, res) => {
   const { body } = req
   const name = body.name

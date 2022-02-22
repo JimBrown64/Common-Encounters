@@ -1,0 +1,59 @@
+.hide{
+  display: none;
+}
+
+.container{
+  display:flex;
+  flex-direction: column; 
+}
+
+.topStats{
+  display:flex;
+  margin-left: 15px;
+}
+
+.half{
+  flex-direction:column;
+  margin-left: 8px;
+}
+
+.statList{
+  display:flex;
+  margin-left: 12px;
+}
+
+.submit{
+  background-color:gray;
+  border-radius: 20px;
+  margin-right: 110px;
+}
+
+.encounterSubmit{
+  background-color:gray;
+  border-radius: 20px;
+  margin-left: 70px;
+}
+
+.statBlock{
+  background-color: white;
+  margin-left: 350px;
+  border-radius: 25px;
+}
+
+.encounterStatBlock{
+  background-color: white;
+  margin-right: 350px;
+  border-radius: 25px;
+}
+
+.gap{
+  margin-left:20px;
+}
+
+.actions{
+  margin-right: 5px;
+}
+
+.showPage{
+  margin-right: 700px
+}
