@@ -20,12 +20,12 @@ const EncounterList = (props) => {
   }
 
   const encounterArray = encounters.map((encounter) => {
-    if(encounter.userId === props.user.id){
-    return (
-      <Link className="link" key={encounter.id} to={`/encounters/${encounter.id}`}>
-        <li>{encounter.name}</li>
-      </Link>
-    )
+    if (encounter.userId === props.user.id) {
+      return (
+        <Link className="link" key={encounter.id} to={`/encounters/${encounter.id}`}>
+          <li>{encounter.name}</li>
+        </Link>
+      )
     }
   })
 
