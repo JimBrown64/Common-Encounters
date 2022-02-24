@@ -5,6 +5,7 @@
 .container{
   display:flex;
   flex-direction: column; 
+  margin: 8px;
 }
 
 .topStats{
@@ -56,4 +57,9 @@
 
 .showPage{
   margin-right: 700px
+}
+
+.trait{
+  border: 3px solid red;
+  border-radius: 8px;
 }

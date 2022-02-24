@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 
-const CreatureTile = (props) => {
+const EncounterCreatureTile = (props) => {
   const creature = props.creature
-  const id = creature.id
 
   const [visible, setVisible] = useState("hide")
 
@@ -14,16 +13,12 @@ const CreatureTile = (props) => {
     }
   }
 
-  const addHandler = () => {
-    props.addEncounterCreature(id)
-  }
-
   return (
     <div className="container">
-      <h3 className="creatureName" onClick={clickHandler} >
+      <h3 onClick={clickHandler} >
         CR:{creature.CR}  {creature.name}
       </h3>
-      <div className={`statBlock ${visible}`}>
+      <div className={`encounterStatBlock ${visible}`}>
         <div className="topStats">
           <p className="gap">
             HP:{creature.HP}
@@ -38,24 +33,24 @@ const CreatureTile = (props) => {
         <div className="statList">
           <div className="statList">
             <div className="half">
-              <p className="trait">
+              <p>
                 Str:{creature.str}
               </p>
-              <p className="trait">
+              <p>
                 Dex:{creature.dex}
               </p>
-              <p className="trait">
+              <p>
                 Con:{creature.con}
               </p>
             </div>
             <div className="half">
-              <p className="trait">
+              <p>
                 Int:{creature.int}
               </p>
-              <p className="trait">
+              <p>
                 Wis:{creature.wis}
               </p>
-              <p className="trait">
+              <p>
                 Cha:{creature.cha}
               </p>
             </div>
@@ -88,10 +83,9 @@ const CreatureTile = (props) => {
         <p className="actions">
           actions:{creature.actions}
         </p>
-        <button className="submit" type="button" onClick={addHandler}>Add to Encounter</button>
       </div>
     </div>
   )
 }
 
-export default CreatureTile
+export default EncounterCreatureTile

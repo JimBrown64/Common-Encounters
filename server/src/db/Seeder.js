@@ -3,9 +3,12 @@ import { connection } from "../boot.js"
 import CreatureSeeder from "./seeders/creatureSeeder.js"
 import EncounterSeeder from "./seeders/encounterSeeder.js"
 import EncounterCreatureSeeder from "./seeders/encounterCreatureSeeder.js"
+import UserSeeder from "./seeders/UserSeeder.js";
 
 class Seeder {
   static async seed() {
+    console.log("seeding users");
+    await UserSeeder.seed();
     console.log("seeding creatures");
     await CreatureSeeder.seed();
     console.log("seeding encounters");
