@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ErrorList from "../layout/ErrorList"
 import translateServerErrors from "../../services/translateServerErrors"
-import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 
 const EncounterForm = (props) => {
@@ -50,13 +49,9 @@ const EncounterForm = (props) => {
   }
 
   const handleSubmit = (event) => {
-    if (props.user) {
-      event.preventDefault()
-      submitForm(encounterName, props.encounterCreatures, props.user)
-      clearForm()
-    } else {
-      <Link to="/user-sessions/new" />
-    }
+    event.preventDefault()
+    submitForm(encounterName, props.encounterCreatures, props.user)
+    clearForm()
   }
 
   let submitButton = <Link className="link" to="/user-sessions/new"><p>Log in to save Encounter</p></Link>

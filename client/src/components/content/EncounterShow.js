@@ -25,6 +25,42 @@ const EncounterShow = () => {
     }
   }
 
+  const deleteEncounter = async () => {
+    try {
+      const id = params.id
+      const response = await fetch(`/api/v1/encounters/${id}/delete`, {
+        method: "POST",
+        headers: new Headers({
+          "Content-Type": "application/json"
+        }),
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          return setErrors(newErrors)
+        } else {
+          const errorMessage = `${response.status} (${response.statusText})`
+          const error = new Error(errorMessage)
+          throw (error)
+        }
+      }
+      else {
+        console.log("deleted!")
+      }
+    } catch (error) {
+      console.error("error in delete", error)
+    }
+  }
+
+  const handleDelete = (encounter) => {
+    let confirmation = confirm("Are you sure you want to delete this encounter?")
+    if (confirmation === true) {
+      deleteEncounter(encounter)
+      window.location.replace("/encounters")
+    }
+  }
+
   let key = 1
   const tileArray = encounterCreatures.map((creature) => {
     key++
@@ -44,6 +80,7 @@ const EncounterShow = () => {
     <div className="showPage">
       <h1>{encounterName}</h1>
       {tileArray}
+      <button type="button" onClick={handleDelete}>Delete Encounter</button>
     </div>
 
   )

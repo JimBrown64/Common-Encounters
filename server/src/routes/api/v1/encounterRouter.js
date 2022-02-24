@@ -53,8 +53,22 @@ encounterRouter.post("/", async (req, res) => {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
-    console.log("error at the post router: ", error)
     console.error("Error in the encounter post router", error)
+    return res.status(500).json({ errors: error })
+  }
+})
+
+encounterRouter.post("/:id/delete", async (req, res) => {
+  const id = req.params.id
+  try {
+    const thisEncounter = await Encounter.query().findById(id)
+    await thisEncounter.$relatedQuery("encounterCreatures").delete()
+    await Encounter.query().deleteById(id)
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    console.error("Error in the encounter delete", error)
     return res.status(500).json({ errors: error })
   }
 })
