@@ -30,9 +30,11 @@ encounterRouter.post("/", async (req, res) => {
   const { body } = req
   const name = body.name
   const encounter = body.encounter
+  const userId = body.user.id
+  const encounterBody = { name, userId }
 
   try {
-    const newEncounter = await Encounter.query().insertAndFetch({ name })
+    const newEncounter = await Encounter.query().insertAndFetch(encounterBody)
     const id = newEncounter.id
     Promise.all(encounter.map(async (creature) => {
       try {

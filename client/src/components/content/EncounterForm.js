@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import ErrorList from "../layout/ErrorList"
 import translateServerErrors from "../../services/translateServerErrors"
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 const EncounterForm = (props) => {
   const [encounterName, setEncounterName] = useState("")
   const [errors, setErrors] = useState([])
 
+  let encounterArray = props.encounterArray
+
   const handleInputChange = event => {
     setEncounterName(event.currentTarget.value)
   }
 
-  const submitForm = async (name, encounter) => {
+  const submitForm = async (name, encounter, user) => {
     try {
       const response = await fetch("/api/v1/encounters", {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json"
         }),
-        body: JSON.stringify({ name: name, encounter: encounter })
+        body: JSON.stringify({ name: name, encounter: encounter, user: user })
       })
       if (!response.ok) {
         if (response.status === 422) {
@@ -42,20 +46,29 @@ const EncounterForm = (props) => {
 
   const clearForm = () => {
     setEncounterName("")
-    console.log(encounterName)
+    encounterArray = null
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log("encounter at encounter form: ", encounterName)
-    submitForm(encounterName, props.encounterCreatures)
-    clearForm()
+    if (props.user) {
+      event.preventDefault()
+      submitForm(encounterName, props.encounterCreatures, props.user)
+      clearForm()
+    } else {
+      <Link to="/user-sessions/new" />
+    }
   }
+
+  let submitButton = <Link className="link" to="/user-sessions/new"><p>Log in to save Encounter</p></Link>
+  if (props.user) {
+    submitButton = <input type='submit' />
+  }
+
 
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <label className="formName" htmlFor='name'>Name: *</label>
+        <label className="formName" htmlFor='name'>Encounter Name:</label>
         <input
           type='text'
           name='name'
@@ -63,11 +76,12 @@ const EncounterForm = (props) => {
           onChange={handleInputChange}
           value={encounterName}
         />
-        {props.encounterArray}
-        <input type='submit' />
+        {encounterArray}
+        {submitButton}
       </form>
     </div>
   )
 }
+
 
 export default EncounterForm

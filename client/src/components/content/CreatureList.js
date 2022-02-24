@@ -7,6 +7,8 @@ const CreatureList = (props) => {
   const [creatures, setCreatures] = useState([])
   const [encounterCreatures, setEncounterCreatures] = useState([])
 
+  const user = props.user
+
   const getCreatures = async () => {
     try {
       const response = await fetch("/api/v1/creatures")
@@ -69,12 +71,15 @@ const CreatureList = (props) => {
   return (
     <div className="row">
       <div className="column">
-      <EncounterForm
-        encounterArray={encounterArray}
-        encounterCreatures={encounterCreatures}
-      />
+        <h2>Encounter:</h2>
+        <EncounterForm
+          encounterArray={encounterArray}
+          encounterCreatures={encounterCreatures}
+          user={user}
+        />
       </div>
-      <div className= "column list">
+      <div className="column list">
+        <h2>Creatures:</h2>
         {creatureArray}
       </div>
     </div>

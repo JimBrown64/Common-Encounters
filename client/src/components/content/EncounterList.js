@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const EncounterList = () => {
+const EncounterList = (props) => {
   const [encounters, setEncounters] = useState([])
 
   const getEncounters = async () => {
@@ -20,12 +20,13 @@ const EncounterList = () => {
   }
 
   const encounterArray = encounters.map((encounter) => {
-
+    if(encounter.userId === props.user.id){
     return (
       <Link className="link" key={encounter.id} to={`/encounters/${encounter.id}`}>
         <li>{encounter.name}</li>
       </Link>
     )
+    }
   })
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import EncounterCreatureTile from "./EncounterCreatureTile";
+import EncounterShowTile from "./EncounterShowTile"
 
 const EncounterShow = () => {
   const params = useParams()
@@ -29,7 +29,7 @@ const EncounterShow = () => {
   const tileArray = encounterCreatures.map((creature) => {
     key++
     return (
-      <EncounterCreatureTile
+      <EncounterShowTile
         key={key}
         creature={creature}
       />
