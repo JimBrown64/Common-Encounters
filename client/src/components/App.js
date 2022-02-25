@@ -11,6 +11,7 @@ import CreatureList from "./content/CreatureList";
 import EncounterList from "./content/EncounterList";
 import EncounterShow from "./content/EncounterShow";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
+import LandingPage from "./content/LandingPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -32,9 +33,7 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/">
-          <h2>Hello from react</h2>
-        </Route>
+        <Route exact path="/" component={LandingPage}/>
         <Route exact path="/creatures">
         <CreatureList user={currentUser}/>s
          </Route>
