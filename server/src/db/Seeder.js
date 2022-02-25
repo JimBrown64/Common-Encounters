@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { connection } from "../boot.js"
-import CreatureSeeder from "./seeders/creatureSeeder.js"
-import EncounterSeeder from "./seeders/encounterSeeder.js"
-import EncounterCreatureSeeder from "./seeders/encounterCreatureSeeder.js"
+import CreatureSeeder from "./seeders/CreatureSeeder.js"
+import EncounterSeeder from "./seeders/EncounterSeeder.js"
+import EncounterCreatureSeeder from "./seeders/EncounterCreatureSeeder.js"
 import UserSeeder from "./seeders/UserSeeder.js";
 
 class Seeder {
