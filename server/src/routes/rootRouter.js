@@ -2,8 +2,8 @@ import express from "express";
 import userSessionsRouter from "./api/v1/userSessionsRouter.js";
 import usersRouter from "./api/v1/usersRouter.js";
 import clientRouter from "./clientRouter.js";
-import creatureRouter from "./api/v1/CreatureRouter.js";
-import encounterRouter from "./api/v1/EncounterRouter.js";
+import creatureRouter from "./api/v1/creatureRouter.js";
+import encounterRouter from "./api/v1/encounterRouter.js";
 
 const rootRouter = new express.Router();
 rootRouter.use("/", clientRouter);
