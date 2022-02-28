@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ErrorList from "../layout/ErrorList"
 import translateServerErrors from "../../services/translateServerErrors"
 import { Link } from "react-router-dom";
@@ -7,7 +7,8 @@ const EncounterForm = (props) => {
   const [encounterName, setEncounterName] = useState("")
   const [errors, setErrors] = useState([])
 
-  let encounterArray = props.encounterArray
+  const encounterArray = props.encounterArray
+  const challengeRating = props.challengeRating
 
   const handleInputChange = event => {
     setEncounterName(event.currentTarget.value)
@@ -63,6 +64,7 @@ const EncounterForm = (props) => {
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
+        {challengeRating}
         <label className="formName" htmlFor='name'>Encounter Name:</label>
         <input
           type='text'
@@ -77,6 +79,5 @@ const EncounterForm = (props) => {
     </div>
   )
 }
-
 
 export default EncounterForm

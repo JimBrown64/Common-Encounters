@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CreatureTile from "./CreatureTile.js";
 import EncounterCreatureTile from "./EncounterCreatureTile.js";
 import EncounterForm from "./EncounterForm"
+import experienceTracker from "./experienceTracker.js";
 
 const CreatureList = (props) => {
   const [creatures, setCreatures] = useState([])
@@ -64,6 +65,12 @@ const CreatureList = (props) => {
     )
   })
 
+  const crArray = encounterCreatures.map((creature) => {
+    return creature.CR
+  })
+
+  const challengeRating = experienceTracker(crArray)
+
   useEffect(() => {
     getCreatures()
   }, [])
@@ -76,6 +83,7 @@ const CreatureList = (props) => {
           encounterArray={encounterArray}
           encounterCreatures={encounterCreatures}
           user={user}
+          challengeRating={challengeRating}
         />
       </div>
       <div className="column list">
