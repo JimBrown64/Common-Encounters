@@ -1,15 +1,16 @@
+@import "../../../public/stylesheets/colors.scss";
+
 .row{
   display:flex;
 }
 
 .column{
   flex:50%;
-  margin-left: 20px;
 }
 
 .list{
-  text-align: right;
-  margin-right: 30px;
+  max-width: 400;
+  text-align: center;
 }
 
 .encounterList{
@@ -25,4 +26,27 @@
 }
 .link:visited{
   color:black;
+}
+
+.box{
+  background-color: $gray;
+  border-radius: 25px;
+  margin-top: 25px;
+  border:solid 3px black;
+}
+
+.creatures{
+text-align: center;
+}
+
+.left{
+  margin-left: 50px;
+}
+
+.right{
+  margin-right: 50px;
+}
+
+.encounter{
+  text-align: center;
 }

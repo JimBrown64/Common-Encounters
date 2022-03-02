@@ -18,7 +18,7 @@ const EncounterCreatureTile = (props) => {
       <h3 onClick={clickHandler} >
         CR:{creature.CR}  {creature.name}
       </h3>
-      <div className={`encounterStatBlock ${visible}`}>
+      <div className={`statBlock ${visible}`}>
         <div className="topStats">
           <p className="gap">
             HP:{creature.HP}

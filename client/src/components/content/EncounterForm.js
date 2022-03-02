@@ -55,18 +55,20 @@ const EncounterForm = (props) => {
     clearForm()
   }
 
-  let submitButton = <Link className="link" to="/user-sessions/new"><p>Log in to save Encounter</p></Link>
+  let submitButton = <Link className="link" to="/user-sessions/new"><p className="encounterSubmit">Log in to save Encounter</p></Link>
   if (props.user) {
     submitButton = <input type='submit' />
   }
 
-
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        {challengeRating}
+        <div className="cr">
+          Total CR: {challengeRating}
+        </div>
         <label className="formName" htmlFor='name'>Encounter Name:</label>
         <input
+          className="field"
           type='text'
           name='name'
           id='name'

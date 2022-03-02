@@ -8,7 +8,7 @@ const CreatureTile = (props) => {
 
   const clickHandler = () => {
     if (visible === "hide") {
-      setVisible("show")
+      setVisible("")
     } else {
       setVisible("hide")
     }

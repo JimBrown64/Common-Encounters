@@ -1,0 +1,21 @@
+.encounterList{
+  background-color: $gray;
+  border-radius: 25px;
+  margin-top: 25px;
+  border:solid 3px black;
+  padding: 20px;
+  max-width: max-content;
+}
+
+.showPage{
+  background-color: $gray;
+  border-radius: 25px;
+  margin-top: 25px;
+  border:solid 3px black;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.anEncounter{
+  text-align: center;
+}
