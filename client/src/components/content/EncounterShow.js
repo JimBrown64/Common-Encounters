@@ -78,7 +78,7 @@ const EncounterShow = () => {
 
   return (
     <div className="showPage">
-      <h1>{encounterName}</h1>
+      <h1 className="anEncounter">{encounterName}</h1>
       {tileArray}
       <button type="button" onClick={handleDelete}>Delete Encounter</button>
     </div>

@@ -7,10 +7,12 @@ const LandingPage = () => {
   }
 
   return (
-    <div className="center">
-      <h2>Common Encounters</h2>
-      <h5>A fifth edition Dungeons and Dragons encounter builder</h5>
-      <button className="landingButton" type="button" onClick={clickHandler}>Get Started</button>
+    <div>
+      <div className="center">
+        <h2>Common Encounters</h2>
+        <h5>A fifth edition Dungeons and Dragons encounter builder</h5>
+        <button className="landingButton" type="button" onClick={clickHandler}>Get Started</button>
+      </div>
     </div>
   )
 }

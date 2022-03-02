@@ -3,19 +3,20 @@
 }
 
 .container{
-  display:flex;
   flex-direction: column; 
   margin: 8px;
+text-align: center;
 }
 
 .topStats{
   display:flex;
-  margin-left: 15px;
+  margin-left: 80px;
 }
 
 .half{
   flex-direction:column;
   margin-left: 8px;
+  text-align: right;
 }
 
 .statList{
@@ -26,10 +27,9 @@
 .submit{
   background-color:gray;
   border-radius: 20px;
-  margin-right: 110px;
 }
 
-.encounterSubmit{
+.encounterRemove{
   background-color:gray;
   border-radius: 20px;
   margin-left: 70px;
@@ -37,13 +37,6 @@
 
 .statBlock{
   background-color: white;
-  margin-left: 350px;
-  border-radius: 25px;
-}
-
-.encounterStatBlock{
-  background-color: white;
-  margin-right: 350px;
   border-radius: 25px;
 }
 
@@ -62,4 +55,8 @@
 .trait{
   border: 3px solid red;
   border-radius: 8px;
+}
+
+.creatureName{
+  text-align: center;
 }

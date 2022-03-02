@@ -1,7 +1,28 @@
-.form{
-  display:flex;
+.formName{
+  max-width: max-content;
+  margin-left: 25%;
 }
 
-.formName{
-  flex:20%;
+.field{
+  max-width: 200px;
+  margin-left: 25%;
+}
+
+.form{
+  text-align: center;
+}
+
+.encounterSubmit{
+  background-color: white;
+  margin-left: 26%;
+  margin-right: 30%;
+  border:solid 3px black;
+}
+
+.cr{
+  font-size: 30px;
+  background-color: rgb(219, 219, 219);
+  margin-left: 30%;
+  margin-right: 30%;
+  border: solid 3px black;
 }

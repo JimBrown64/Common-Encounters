@@ -77,8 +77,8 @@ const CreatureList = (props) => {
 
   return (
     <div className="row">
-      <div className="column">
-        <h2>Encounter:</h2>
+      <div className="column box left">
+        <h2 className="encounter">Encounter</h2>
         <EncounterForm
           encounterArray={encounterArray}
           encounterCreatures={encounterCreatures}
@@ -86,8 +86,9 @@ const CreatureList = (props) => {
           challengeRating={challengeRating}
         />
       </div>
-      <div className="column list">
-        <h2>Creatures:</h2>
+      <div className="column"></div>
+      <div className="column list box right">
+        <h2 className="creatures">Creatures</h2>
         {creatureArray}
       </div>
     </div>

@@ -6,6 +6,8 @@
 @import "../../../public/stylesheets/encounterForm.scss";
 @import "../../../public/stylesheets/creatureTile.scss";
 @import "../../../public/stylesheets/landingPage.scss";
+@import"../../../public/stylesheets/encounterList.scss";
+
 *,
 *::before,
 *::after {
@@ -18,5 +20,6 @@
 }
 
 body{
-background-color: $gray;
+background: url("https://st3.depositphotos.com/5623324/15815/v/600/depositphotos_158158190-stock-video-dark-and-spooky-dungeon-with.jpg") no-repeat center center fixed;
+background-size: cover;
 }
