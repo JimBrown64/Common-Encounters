@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import EncounterShowTile from "./EncounterShowTile"
+import experienceTracker from "./experienceTracker";
 
 const EncounterShow = () => {
   const params = useParams()
@@ -61,6 +62,12 @@ const EncounterShow = () => {
     }
   }
 
+  const crArray = encounterCreatures.map((creature) => {
+    return creature.CR
+  })
+
+  const challengeRating = experienceTracker(crArray)
+
   let key = 1
   const tileArray = encounterCreatures.map((creature) => {
     key++
@@ -78,7 +85,7 @@ const EncounterShow = () => {
 
   return (
     <div className="showPage">
-      <h1 className="anEncounter">{encounterName}</h1>
+      <h1 className="anEncounter">{encounterName} CR:{challengeRating}</h1>
       {tileArray}
       <button type="button" onClick={handleDelete}>Delete Encounter</button>
     </div>
