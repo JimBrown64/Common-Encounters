@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 
+import fractionConversion from "../converters/fractionConversion.js"
+
 const EncounterCreatureTile = (props) => {
   const creature = props.creature
+  const convertedCR = fractionConversion(creature.CR)
 
   const [visible, setVisible] = useState("hide")
 
@@ -16,7 +19,7 @@ const EncounterCreatureTile = (props) => {
   return (
     <div className="container">
       <h3 onClick={clickHandler} >
-        CR:{creature.CR}  {creature.name}
+        CR:{convertedCR}  {creature.name}
       </h3>
       <div className={`statBlock ${visible}`}>
         <div className="topStats">

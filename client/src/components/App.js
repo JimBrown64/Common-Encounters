@@ -27,7 +27,6 @@ const App = (props) => {
   useEffect(() => {
     fetchCurrentUser()
   }, [])
-  console.log("user at app: ",currentUser)
 
   return (
     <Router>

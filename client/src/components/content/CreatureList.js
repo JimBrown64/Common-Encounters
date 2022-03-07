@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CreatureTile from "./CreatureTile.js";
 import EncounterCreatureTile from "./EncounterCreatureTile.js";
 import EncounterForm from "./EncounterForm"
-import experienceTracker from "./experienceTracker.js";
+import experienceTracker from "../converters/experienceTracker.js"
 
 const CreatureList = (props) => {
   const [creatures, setCreatures] = useState([])

@@ -1,5 +1,3 @@
-import React from "react";
-
 const experienceTracker = (array) => {
   const experienceArray = array.map((cr) => {
     switch (cr) {
@@ -75,8 +73,6 @@ const experienceTracker = (array) => {
     }
   }
 
-  console.log("experience total: ", total)
-
   let challengeRating = 0
   if (total <= 0 || total === 10) {
     challengeRating = 0
@@ -131,7 +127,6 @@ const experienceTracker = (array) => {
   }
 
   return challengeRating
-  console.log("challenge rating: ", challengeRating)
 }
 
 export default experienceTracker
