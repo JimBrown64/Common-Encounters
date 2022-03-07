@@ -3,12 +3,16 @@ import ErrorList from "../layout/ErrorList"
 import translateServerErrors from "../../services/translateServerErrors"
 import { Link } from "react-router-dom";
 
+import fractionConversion from "../converters/fractionConversion.js";
+
 const EncounterForm = (props) => {
   const [encounterName, setEncounterName] = useState("")
   const [errors, setErrors] = useState([])
 
   const encounterArray = props.encounterArray
   const challengeRating = props.challengeRating
+  const convertedCR = fractionConversion(challengeRating)
+  console.log("converted fraction: ",fractionConversion(challengeRating))
 
   const handleInputChange = event => {
     setEncounterName(event.currentTarget.value)
@@ -64,7 +68,7 @@ const EncounterForm = (props) => {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="cr">
-          Total CR: {challengeRating}
+          Total CR: {convertedCR}
         </div>
         <label className="formName" htmlFor='name'>Encounter Name:</label>
         <input
