@@ -10,6 +10,24 @@ const CreatureList = (props) => {
 
   const user = props.user
 
+  const sortCreatures = (creatures) => {
+    const sortedByCR = creatures.sort((a, b) => a.CR - b.CR)
+    const sortedByName = sortedByCR.sort((a, b) => {
+      if (a.CR === b.CR) {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      }
+    });
+    return sortedByName
+  }
+
   const getCreatures = async () => {
     try {
       const response = await fetch("/api/v1/creatures")
@@ -19,7 +37,8 @@ const CreatureList = (props) => {
         throw (error)
       }
       const responseBody = await response.json()
-      setCreatures(responseBody.creatures)
+      const sortedCreatures = sortCreatures(responseBody.creatures)
+      setCreatures(sortedCreatures)
     } catch (error) {
       console.error("Error in CreatureList Fetch", error)
     }

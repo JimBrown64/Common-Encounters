@@ -12,7 +12,6 @@ const EncounterForm = (props) => {
   const encounterArray = props.encounterArray
   const challengeRating = props.challengeRating
   const convertedCR = fractionConversion(challengeRating)
-  console.log("converted fraction: ",fractionConversion(challengeRating))
 
   const handleInputChange = event => {
     setEncounterName(event.currentTarget.value)

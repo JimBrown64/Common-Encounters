@@ -5,6 +5,67 @@ class CreatureSeeder {
   static async seed() {
     const creatureData = [
       {
+        name: "Bandit",
+        CR: 1 / 8,
+        HP: 11,
+        AC: 12,
+        speed: 30,
+        str: 11,
+        dex: 12,
+        con: 12,
+        int: 10,
+        wis: 10,
+        cha: 10,
+        strSave: 0,
+        dexSave: 1,
+        conSave: 1,
+        intSave: 0,
+        wisSave: 0,
+        chaSave: 0,
+        actions: `Scimitar. Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.\n
+        Light Crossbow. Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one target. Hit: 5 (1d8 + 1) piercing damage.`
+      },
+      {
+        name: "Guard",
+        CR: 1 / 8,
+        HP: 11,
+        AC: 16,
+        speed: 30,
+        str: 13,
+        dex: 12,
+        con: 12,
+        int: 10,
+        wis: 11,
+        cha: 10,
+        strSave: 1,
+        dexSave: 1,
+        conSave: 1,
+        intSave: 0,
+        wisSave: 0,
+        chaSave: 0,
+        actions: `Spear. Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.`
+      },
+      {
+        name: "Noble",
+        CR: 1 / 8,
+        HP: 9,
+        AC: 15,
+        speed: 30,
+        str: 11,
+        dex: 12,
+        con: 11,
+        int: 12,
+        wis: 14,
+        cha: 16,
+        strSave: 0,
+        dexSave: 1,
+        conSave: 0,
+        intSave: 1,
+        wisSave: 2,
+        chaSave: 3,
+        actions: `Rapier. Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.`
+      },
+      {
         name: "Commoner",
         CR: 0,
         HP: 4,
@@ -25,89 +86,8 @@ class CreatureSeeder {
         actions: "Club: Attack Bonus: +2, range:5ft, (1d4) bludgeoning damage "
       },
       {
-        name: "Bandit",
-        CR: 1/8,
-        HP: 11,
-        AC: 12,
-        speed: 30,
-        str: 11,
-        dex: 12,
-        con: 12,
-        int: 10,
-        wis: 10,
-        cha: 10,
-        strSave: 0,
-        dexSave: 1,
-        conSave: 1,
-        intSave: 0,
-        wisSave: 0,
-        chaSave: 0,
-        actions: `Scimitar. Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.\n
-        Light Crossbow. Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one target. Hit: 5 (1d8 + 1) piercing damage.`
-      },
-      {
-        name: "Cultist",
-        CR: 1/8,
-        HP: 9,
-        AC: 12,
-        speed: 30,
-        str: 11,
-        dex: 12,
-        con: 10,
-        int: 10,
-        wis: 11,
-        cha: 10,
-        strSave: 0,
-        dexSave: 1,
-        conSave: 0,
-        intSave: 0,
-        wisSave: 0,
-        chaSave: 0,
-        actions: "Scimitar: Attack Bonus: +3, range:5ft, (1d6+1)slashing damage"
-      },
-      {
-        name: "Guard",
-        CR:1/8,
-        HP: 11,
-        AC: 16,
-        speed: 30,
-        str: 13,
-        dex: 12,
-        con: 12,
-        int: 10,
-        wis: 11,
-        cha: 10,
-        strSave: 1,
-        dexSave: 1,
-        conSave: 1,
-        intSave: 0,
-        wisSave: 0,
-        chaSave: 0,
-        actions:`Spear. Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.`
-      },
-      {
-        name: "Noble",
-        CR: 1/8,
-        HP: 9,
-        AC: 15,
-        speed:30 ,
-        str: 11,
-        dex: 12,
-        con: 11,
-        int: 12,
-        wis: 14,
-        cha: 16,
-        strSave: 0,
-        dexSave: 1,
-        conSave: 0,
-        intSave: 1,
-        wisSave: 2,
-        chaSave: 3,
-        actions: `Rapier. Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.`
-      },
-      {
         name: "Tribal Warrior",
-        CR: 1/8,
+        CR: 1 / 8,
         HP: 11,
         AC: 12,
         speed: 30,
@@ -127,7 +107,7 @@ class CreatureSeeder {
       },
       {
         name: "Acolyte",
-        CR: 1/4,
+        CR: 1 / 4,
         HP: 9,
         AC: 10,
         speed: 30,
@@ -153,7 +133,7 @@ class CreatureSeeder {
       },
       {
         name: "Scout",
-        CR: 1/2,
+        CR: 1 / 2,
         HP: 16,
         AC: 13,
         speed: 30,
@@ -170,14 +150,14 @@ class CreatureSeeder {
         wisSave: 1,
         chaSave: 0,
         actions: `Multiattack. The scout makes two melee attacks or two ranged attacks.
-
+        
         Shortsword. Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
         
         Longbow. Ranged Weapon Attack: +4 to hit, ranged 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.`
       },
       {
         name: "Thug",
-        CR: 1/2,
+        CR: 1 / 2,
         HP: 32,
         AC: 11,
         speed: 30,
@@ -194,7 +174,7 @@ class CreatureSeeder {
         wisSave: 0,
         chaSave: 0,
         actions: `Multiattack. The thug makes two melee attacks.
-
+        
         Mace. Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) bludgeoning damage.
         
         Heavy Crossbow. Ranged Weapon Attack: +2 to hit, range 100/400 ft., one target. Hit: 5 (1d10) piercing damage.`
@@ -218,12 +198,12 @@ class CreatureSeeder {
         wisSave: 2,
         chaSave: 3,
         actions: `Cunning Action. On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action.
-      
+        
         Sneak Attack (1/Turn). The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn't incapacitated and the spy doesn't have disadvantage on the attack roll.
         Multiattack. The spy makes two melee attacks.
-      
+        
         Shortsword. Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.
-      
+        
         Hand Crossbow. Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.`
       },
       {
@@ -296,6 +276,26 @@ class CreatureSeeder {
         Dagger. Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.`
       },
       {
+        name: "Cultist",
+        CR: 1 / 8,
+        HP: 9,
+        AC: 12,
+        speed: 30,
+        str: 11,
+        dex: 12,
+        con: 10,
+        int: 10,
+        wis: 11,
+        cha: 10,
+        strSave: 0,
+        dexSave: 1,
+        conSave: 0,
+        intSave: 0,
+        wisSave: 0,
+        chaSave: 0,
+        actions: "Scimitar: Attack Bonus: +3, range:5ft, (1d6+1)slashing damage"
+      },
+      {
         name: "Druid",
         CR: 2,
         HP: 27,
@@ -327,7 +327,7 @@ class CreatureSeeder {
         CR: 3,
         HP: 52,
         AC: 18,
-        speed:30 ,
+        speed: 30,
         str: 16,
         dex: 11,
         con: 14,
@@ -423,7 +423,7 @@ class CreatureSeeder {
         Light Crossbow. Ranged Weapon Attack: +6 to hit, range 80/320 ft., one target. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.`
       },
     ]
-    
+
     for (const singleCreatureData of creatureData) {
       const currentCreature = await Creature.query().findOne(singleCreatureData)
       if (!currentCreature) {
