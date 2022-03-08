@@ -47,9 +47,6 @@ const EncounterShow = () => {
           throw (error)
         }
       }
-      else {
-        console.log("deleted!")
-      }
     } catch (error) {
       console.error("error in delete", error)
     }
@@ -66,7 +63,6 @@ const EncounterShow = () => {
   const crArray = encounterCreatures.map((creature) => {
     return creature.CR
   })
-
   const challengeRating = experienceTracker(crArray)
   const convertedCR = fractionConversion(challengeRating)
 
@@ -91,7 +87,6 @@ const EncounterShow = () => {
       {tileArray}
       <button type="button" onClick={handleDelete}>Delete Encounter</button>
     </div>
-
   )
 }
 

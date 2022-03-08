@@ -6,8 +6,15 @@ const CreatureTile = (props) => {
   const creature = props.creature
   const id = creature.id
   const convertedCR = fractionConversion(creature.CR)
-
+  const identifier = props.identifier
+  let buttonMessage = ""
   const [visible, setVisible] = useState("hide")
+
+  if (identifier === "add") {
+    buttonMessage = "Add to Encounter"
+  } else if (identifier === "remove") {
+    buttonMessage = "Remove from Encounter"
+  }
 
   const clickHandler = () => {
     if (visible === "hide") {
@@ -19,6 +26,18 @@ const CreatureTile = (props) => {
 
   const addHandler = () => {
     props.addEncounterCreature(id)
+  }
+
+  const removeHandler = () => {
+    props.removeEncounterCreature(id)
+  }
+
+  const handler = () => {
+    if (identifier === "add") {
+      return addHandler()
+    } else if (identifier === "remove") {
+      return removeHandler()
+    }
   }
 
   return (
@@ -91,7 +110,7 @@ const CreatureTile = (props) => {
         <p className="actions">
           actions:{creature.actions}
         </p>
-        <button className="submit" type="button" onClick={addHandler}>Add to Encounter</button>
+        <button className="submit" type="button" onClick={handler}>{buttonMessage}</button>
       </div>
     </div>
   )

@@ -1,32 +1,14 @@
 import React, { useState, useEffect } from "react";
+
 import CreatureTile from "./CreatureTile.js";
-import EncounterCreatureTile from "./EncounterCreatureTile.js";
 import EncounterForm from "./EncounterForm"
 import experienceTracker from "../converters/experienceTracker.js"
+import sortCreatures from "../converters/sortCreatures.js";
 
 const CreatureList = (props) => {
   const [creatures, setCreatures] = useState([])
   const [encounterCreatures, setEncounterCreatures] = useState([])
-
   const user = props.user
-
-  const sortCreatures = (creatures) => {
-    const sortedByCR = creatures.sort((a, b) => a.CR - b.CR)
-    const sortedByName = sortedByCR.sort((a, b) => {
-      if (a.CR === b.CR) {
-        const nameA = a.name.toUpperCase();
-        const nameB = b.name.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-        return 0;
-      }
-    });
-    return sortedByName
-  }
 
   const getCreatures = async () => {
     try {
@@ -54,6 +36,17 @@ const CreatureList = (props) => {
     setEncounterCreatures([...encounterCreatures].concat(selectedArray))
   }
 
+  const creatureArray = creatures.map((creature) => {
+    return (
+      <CreatureTile
+        key={creature.id}
+        creature={creature}
+        addEncounterCreature={addEncounterCreature}
+        identifier="add"
+      />
+    )
+  })
+
   let key = 1
   const encounterArray = encounterCreatures.map((creature) => {
     const removeEncounterCreature = (creatureId) => {
@@ -66,20 +59,11 @@ const CreatureList = (props) => {
     }
     key++
     return (
-      <EncounterCreatureTile
+      <CreatureTile
         key={key}
         creature={creature}
         removeEncounterCreature={removeEncounterCreature}
-      />
-    )
-  })
-
-  const creatureArray = creatures.map((creature) => {
-    return (
-      <CreatureTile
-        key={creature.id}
-        creature={creature}
-        addEncounterCreature={addEncounterCreature}
+        identifier="remove"
       />
     )
   })
@@ -87,7 +71,6 @@ const CreatureList = (props) => {
   const crArray = encounterCreatures.map((creature) => {
     return creature.CR
   })
-
   const challengeRating = experienceTracker(crArray)
 
   useEffect(() => {
