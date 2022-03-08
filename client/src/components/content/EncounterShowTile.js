@@ -5,7 +5,6 @@ import fractionConversion from "../converters/fractionConversion.js"
 const EncounterCreatureTile = (props) => {
   const creature = props.creature
   const convertedCR = fractionConversion(creature.CR)
-
   const [visible, setVisible] = useState("hide")
 
   const clickHandler = () => {

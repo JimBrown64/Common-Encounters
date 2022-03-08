@@ -8,7 +8,6 @@ import fractionConversion from "../converters/fractionConversion.js";
 const EncounterForm = (props) => {
   const [encounterName, setEncounterName] = useState("")
   const [errors, setErrors] = useState([])
-
   const encounterArray = props.encounterArray
   const challengeRating = props.challengeRating
   const convertedCR = fractionConversion(challengeRating)
@@ -34,7 +33,6 @@ const EncounterForm = (props) => {
         } else {
           const errorMessage = `${response.status} (${response.statusText})`
           const error = new Error(errorMessage)
-          console.log(error)
           throw (error)
         }
       }
@@ -43,7 +41,7 @@ const EncounterForm = (props) => {
         location.href = "/encounters"
       }
     } catch (error) {
-      console.error("The form broke", error)
+      console.error("Error in Form: ", error)
     }
   }
 
