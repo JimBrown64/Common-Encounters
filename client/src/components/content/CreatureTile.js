@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import fractionConversion from "../converters/fractionConversion.js"
+import modifierConverter from "../converters/modifierConverter.js"
 
 const CreatureTile = (props) => {
   const creature = props.creature
@@ -60,26 +61,44 @@ const CreatureTile = (props) => {
         <div className="statList">
           <div className="statList">
             <div className="half">
-              <p className="trait">
-                Str:{creature.str}
-              </p>
-              <p className="trait">
-                Dex:{creature.dex}
-              </p>
-              <p className="trait">
-                Con:{creature.con}
-              </p>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.str)}</span>
+                <p className="trait">
+                  Str:{creature.str}
+                </p>
+              </div>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.dex)}</span>
+                <p className="trait">
+                  Dex:{creature.dex}
+                </p>
+              </div>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.con)}</span>
+                <p className="trait">
+                  Con:{creature.con}
+                </p>
+              </div>
             </div>
             <div className="half">
-              <p className="trait">
-                Int:{creature.int}
-              </p>
-              <p className="trait">
-                Wis:{creature.wis}
-              </p>
-              <p className="trait">
-                Cha:{creature.cha}
-              </p>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.int)}</span>
+                <p className="trait">
+                  Int:{creature.int}
+                </p>
+              </div>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.wis)}</span>
+                <p className="trait">
+                  Wis:{creature.wis}
+                </p>
+              </div>
+              <div className="modifier">
+                <span className="modifierText">{modifierConverter(creature.cha)}</span>
+                <p className="trait">
+                  Cha:{creature.cha}
+                </p>
+              </div>
             </div>
           </div>
           <div className="statList">
