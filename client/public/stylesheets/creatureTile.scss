@@ -60,3 +60,15 @@ text-align: center;
 .creatureName{
   text-align: center;
 }
+
+.modifierText{
+  display: none;
+  text-align: center;
+  border-radius: 6px;
+  background-color: black;
+  color: #fff;
+}
+
+.modifier:hover .modifierText{
+  display:inherit;
+}
