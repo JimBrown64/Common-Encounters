@@ -61,12 +61,20 @@ text-align: center;
   text-align: center;
 }
 
+.modifier{
+  position:relative;
+}
+
 .modifierText{
   display: none;
   text-align: center;
   border-radius: 6px;
   background-color: black;
   color: #fff;
+  position:absolute;
+  width: 25px;
+  margin-left: 40px;
+  margin-top: 5px;
 }
 
 .modifier:hover .modifierText{
