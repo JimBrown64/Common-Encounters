@@ -88,7 +88,27 @@ const CreatureList = (props) => {
           challengeRating={challengeRating}
         />
       </div>
-      <div className="column"></div>
+      <div className="column explanation">
+        <ul>
+          <li>
+            Click on a Creature's Name to Open it's Stat Block, Click on
+            it again to Close it.</li>
+          <li>Hover a Stat to See it's Associated Modifier.</li>
+          <li>
+            To Add a Creature to your Encounter, Click on a Creature's Name,
+            and Click on "Add to Encounter" at the bottom of the Stat Block.
+          </li>
+          <li>
+            To Remove a Creature from the Encounter, Click on the Creature
+            in the Encounter, and Click on "Remove from Encounter" at the 
+            bottom of the Stat Block.
+          </li>
+          <li>
+            To Save an Encounter, Log In to your account, Enter a Name,
+            and Click "Submit".
+          </li>
+        </ul>
+      </div>
       <div className="column list box right">
         <h2 className="creatures">Creatures</h2>
         {creatureArray}
